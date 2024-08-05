@@ -6,7 +6,7 @@ int main(void)
     using std::cout;
     using std::endl;
     TableTennisPlayer player1("Chuck", "Blizzard", true);
-    RatedPlayer rplayer1("Mallory", "Duck", true);
+    RatedPlayer rplayer1(1140, "Mallory", "Duck", true);
     player1.Name();
     rplayer1.Name();
     if(rplayer1.HasTable())
@@ -25,7 +25,7 @@ int main(void)
     cout << "Name: ";
     rplayer2.Name();
     cout << "; Rating: " << rplayer2.Rating() << endl;
-    
+
     std::cin.get();
     return 0;
 }
