@@ -96,6 +96,24 @@ void BrassPlus::Withdraw(double amt)
     {
         double advance = amt - bal;
         owesBank += advance * (1.0 + rate);
-        cout << "Bank advance: $"
+        cout << "Bank advance: $" << advance << endl;
+        cout << "Finance charge: $" << advance * rate << endl;
+        Deposit(advance);
+        Brass::Withdraw(amt);
     }
+    else
+        cout << "Credit Limit exceeded. Transaction cancelled.\n";
+    restore(initialState, prec);
+}
+
+format setFormat()
+{
+    return cout.setf(std::ios_base::fixed,
+                    std::ios_base::floatfield);
+}
+
+void restore(format f, precis p)
+{
+    cout.setf(f, std::ios_base::floatfield);
+    cout.precision(p);
 }
