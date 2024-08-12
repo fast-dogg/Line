@@ -42,7 +42,7 @@ public:
     hasDMA(const baseDMA & hs);
     ~hasDMA();
     hasDMA & operator=(const hasDMA & rs);
-    friend std::ostream & operator
+    friend std::ostream & operator<<(std::ostream & os, const hasDMA & rs);
 };
 
 #endif
