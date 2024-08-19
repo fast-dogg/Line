@@ -43,6 +43,7 @@ std::ostream & Student::arr_out(std::ostream & os) const
     }
     else 
         os << "empty array";
+    return os;
 }
 
 //friends
